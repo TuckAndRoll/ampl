@@ -1,0 +1,65 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "AMPL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.other.entity.ampl",
+					"match": "\\b(arc|environ|maximize|minimize|node|param|problme|set|subject to|suffix|table|var)\\b"
+				},
+				{
+					"name": "keyword.other.reserved.ampl",
+					"match": "\\b(all|binary|by|check|complements|contains|Current|default|dimen|div|else|environ|exists|forall|if|IN|in|Infinity|Initial|INOUT|integer|less|LOCAL|logical|max|min|option|OUT|setof|shell_exitcode|solve_exitcode|solve_message|solve_result|solve_result_num|suffix|sum|symbolic|table|then|union|until|while|within)\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [				
+				{
+					"name": "entity.name.function.command.ampl",
+					"match": "\\b(call|cd|check|close|commands|data|delete|display|drop|end|environ|exit|expand|fix|include|let|load|model|objective|option|print|printf|problem|purge|quit|read|read table|redeclare|reload|remove|reset|restore|shell|show|solexpand|solution|solve|update|unfix|unload|write|write table|xref)\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"comment": "Line Comments -- Asterisk only works at beginning of line",
+					"match": "((#|^\\*).*$)",
+					"captures": {
+						"1": {
+							"name": "comment.line.ampl"
+						}
+					}
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ampl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ampl",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.ampl"
+}

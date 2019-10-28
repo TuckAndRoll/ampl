@@ -1,0 +1,25 @@
+{
+    "name": "ampl",
+    "displayName": "ampl",
+    "description": "ampl",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.33.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ampl",
+            "aliases": ["AMPL", "ampl"],
+            "extensions": [".mod"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ampl",
+            "scopeName": "source.ampl",
+            "path": "./syntaxes/ampl.tmLanguage.json"
+        }]
+    }
+}
